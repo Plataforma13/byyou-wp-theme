@@ -22,6 +22,6 @@
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "http://wp.local:8080/wordpress"
   }
 }
