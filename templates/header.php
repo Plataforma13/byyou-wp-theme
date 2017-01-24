@@ -100,6 +100,5 @@
       </div>
       <!--/.nav-collapse -->
    </div>
-   <!--/.container-flu
-      id -->
 </nav>
+<div class="cabecalho"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo-blog.png" alt="logo byyou blog"></div>

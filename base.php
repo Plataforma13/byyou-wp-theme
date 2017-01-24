@@ -22,14 +22,14 @@ use Roots\Sage\Wrapper;
     <div class="page-content">
       <div class="wrap container" role="document">
         <div class="content row">
-          <main class="main">
-            <?php include Wrapper\template_path(); ?>
-          </main><!-- /.main -->
           <?php if (Setup\display_sidebar()) : ?>
-            <aside class="sidebar">
+            <aside class="sidebar col-md-3">
               <?php include Wrapper\sidebar_path(); ?>
             </aside><!-- /.sidebar -->
           <?php endif; ?>
+          <main class="main col-md-9">
+            <?php include Wrapper\template_path(); ?>
+          </main><!-- /.main -->
         </div><!-- /.content -->
       </div><!-- /.wrap -->
     </div>
