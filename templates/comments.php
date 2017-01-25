@@ -4,13 +4,20 @@ if (post_password_required()) {
 }
 ?>
 
-<section id="comments" class="comments">
+<section id="comments" class="post-comments">
   <?php if (have_comments()) : ?>
     <h2><?php printf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'sage'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>'); ?></h2>
 
-    <ol class="comment-list">
-      <?php wp_list_comments(['style' => 'ol', 'short_ping' => true]); ?>
-    </ol>
+    <?php //comment_form(); ?>
+    <div class="reply">
+      <?php echo get_avatar( wp_get_current_user()->user_email, 59 ); ?>
+      <input type="text" name="">
+      <button class="send">Enviar</button>
+    </div>
+
+    <div class="comment list">
+      <?php wp_list_comments( 'type=comment&callback=mytheme_comment&style=div&max_depth=2&avatar_size=59' ); ?>
+    </div>
 
     <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
       <nav>
@@ -32,5 +39,4 @@ if (post_password_required()) {
     </div>
   <?php endif; ?>
 
-  <?php comment_form(); ?>
 </section>

@@ -26,3 +26,68 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+function mytheme_comment($comment, $args, $depth) {
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
+    <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+
+    <div class="comment-body">
+      <?php if ( 'div' != $args['style'] ) : ?>
+          <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+      <?php endif; ?>
+      <div class="comment-author vcard">
+          <?php echo get_avatar( $comment, 59 ); ?>
+          <?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
+      </div>
+      <?php if ( $comment->comment_approved == '0' ) : ?>
+           <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+            <br />
+      <?php endif; ?>
+
+      <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+          <?php
+          /* translators: 1: date, 2: time */
+          printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)' ), '  ', '' );
+          ?>
+      </div>
+
+      <?php comment_text(); ?>
+
+
+    </div>
+
+    <?php if ( $depth < $args['max_depth'] ) : ?>
+      <div class="reply">
+        <!-- <div class="comment-author"> -->
+          <?php echo get_avatar( wp_get_current_user()->user_email, 59 ); ?>
+          <input type="text" name="">
+          <button class="send">Enviar</button>
+        <!-- </div> -->
+          <?php //comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+      </div>
+    <?php endif; ?>
+
+
+    <?php if ( 'div' != $args['style'] ) : ?>
+    </div>
+    <?php endif; ?>
+    <?php
+}
+
+// add_filter('get_comments_number', 'comment_count', 0);
+// function comment_count( $count ) {
+// if ( ! is_admin() ) {
+// global $id;
+// $comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+// return count($comments_by_type['comment']);
+// } else {
+// return $count;
+// }
+// }

@@ -101,4 +101,6 @@
       <!--/.nav-collapse -->
    </div>
 </nav>
-<div class="cabecalho"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo-blog.png" alt="logo byyou blog"></div>
+<div class="cabecalho">
+  <a href="/blog"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo-blog.png" alt="logo byyou blog"></a>
+</div>

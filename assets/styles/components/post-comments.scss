@@ -1,0 +1,103 @@
+.post-comments {
+
+  > .reply {
+    min-height: 59px;
+    margin-bottom: 50px;
+    margin-left: 80px;
+  }
+
+  .comment.list > .comment {
+    padding-left: 80px;
+  }
+
+  .comment {
+    position: relative;
+  }
+
+  .comment-body {
+    position: relative;
+    padding-bottom: 1px;
+  }
+
+  .comment-body:before {
+    content: "";
+    border-left: 1px dotted #bfbfbf;
+    position: absolute;
+    // top: 59px;
+    top: 30px;
+    bottom: -0px;
+    margin-left: -52px;
+  }
+
+  .comment-author {
+    min-height: 40px;
+  }
+
+  .avatar {
+    position: absolute;
+    margin-left: -80px;
+    // background-color: white;
+    border-radius: 50%;
+  }
+
+  .comment .reply {
+    height: 43px;
+    // margin-bottom: 30px;
+  }
+
+
+  .comment.depth-1 {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+
+  .comment.depth-2,
+  .comment .reply {
+    .avatar {
+      // margin-left: -70px;
+      // padding: 0 10px 20px;
+      width: 40px;
+      height: 40px;
+      margin-left: -72px;
+    }
+  }
+
+}
+
+.post-comments .reply {
+  display: flex;
+  align-items: center;
+
+  input,
+  .send {
+    height: 38px;
+    // line-height: 38px;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    padding: 0 10px;
+  }
+
+  .send {
+    margin-left: 15px;
+    color: #ffffff;
+    // font-family: "Gotham Narrow";
+    font-size: 15px;
+    font-weight: 700;
+    width: 140px;
+    background-color: #bb9a8c;
+    border-color: transparent;
+  }
+}
+
+// reorder the replay position
+.post-comments .comment.list > .comment {
+  display: flex;
+  flex-direction: column;
+
+  .reply {
+    order: 1;
+  }
+}
