@@ -6,21 +6,25 @@
     background-color: #dca3c6;
     line-height: 55px;
     padding-left: 15px;
+    display: block;
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 38px;
+    font-weight: 300;
+    text-transform: uppercase;
     a {
-      display: block;
-      color: #ffffff;
-      font-family: Lato;
-      font-size: 38px;
-      font-weight: 300;
-      text-transform: uppercase;
+      color: inherit;
     }
   }
 
-  .entry-title a {
+  .entry-title {
     color: #000000;
     font-family: Lato;
     font-size: 35px;
     font-weight: 400;
+    a {
+      color: inherit;
+    }
   }
 
   .meta {
