@@ -91,3 +91,26 @@ function mytheme_comment($comment, $args, $depth) {
 // return $count;
 // }
 // }
+
+
+// Run this code on 'after_theme_setup', when plugins have already been loaded.
+add_action('after_setup_theme', 'my_load_plugin');
+// This function loads the plugin.
+function my_load_plugin() {
+// Check to see if your plugin has already been loaded. This can be done in several
+// ways - here are a few examples:
+//
+// Check for a class:
+//  if (!class_exists('MyPluginClass')) {
+//
+// Check for a function:
+//  if (!function_exists('my_plugin_function_name')) {
+//
+// Check for a constant:
+//  if (!defined('MY_PLUGIN_CONSTANT')) {
+  if (!class_exists('Social')) {
+    // load Social if not already loaded
+    // die(get_template_directory());
+    include_once(get_template_directory().'/plugins/wp-ulike/wp-ulike.php');
+  }
+}
