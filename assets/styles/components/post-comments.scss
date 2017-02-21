@@ -140,9 +140,9 @@
     font-weight: 700;
     background-color: #bb9a8c;
     border-color: transparent;
-    margin-top: 10px;
     @media (max-width: 767px) {
       width: 100%;
+      margin-top: 10px;
     }
     @media (min-width: 400px) and (max-width: 767px) {
       margin-left: 40%;

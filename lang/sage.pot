@@ -23,7 +23,7 @@ msgstr ""
 
 #: lib/extras.php:31
 msgid "Continued"
-msgstr ""
+msgstr "Continue lendo"
 
 #: lib/setup.php:30
 msgid "Primary Navigation"
