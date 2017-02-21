@@ -30,7 +30,7 @@
     padding-bottom: 30px;
   }
 
-  .comment-body:not(:last-child):before {
+  .comment-body:before {
     content: "";
     border-left: 1px dotted #bfbfbf;
     position: absolute;
@@ -86,11 +86,14 @@
     margin-left: -80px;
     // background-color: white;
     border-radius: 50%;
+    top: 0;
   }
 
-  .comment .reply {
-    height: 43px;
-    // margin-bottom: 30px;
+  @media (min-width: 768px) {
+    .comment .reply {
+      height: 43px;
+      // margin-bottom: 30px;
+    }
   }
 
 
@@ -116,6 +119,8 @@
 .post-comments .reply {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  position: relative;
 
   input,
   .send {
@@ -129,14 +134,23 @@
   }
 
   .send {
-    margin-left: 15px;
     color: #ffffff;
     // font-family: "Gotham Narrow";
     font-size: 15px;
     font-weight: 700;
-    width: 140px;
     background-color: #bb9a8c;
     border-color: transparent;
+    margin-top: 10px;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+    @media (min-width: 400px) and (max-width: 767px) {
+      margin-left: 40%;
+    }
+    @media (min-width: 768px) {
+      margin-left: 15px;
+      width: 140px;
+    }
   }
 }
 

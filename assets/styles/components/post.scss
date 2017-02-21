@@ -1,6 +1,12 @@
 .post {
   margin-bottom: 80px;
 
+  @media (max-width: 767px) {
+    .home & {
+      text-align: center;
+    }
+  }
+
   .entry-category {
     margin: 0;
     background-color: #dca3c6;
@@ -9,8 +15,8 @@
     display: block;
     color: #ffffff;
     font-family: Lato;
-    font-size: 38px;
     font-weight: 300;
+    font-size: 38px;
     text-transform: uppercase;
     a {
       color: inherit;
@@ -20,8 +26,13 @@
   .entry-title {
     color: #000000;
     font-family: Lato;
-    font-size: 35px;
     font-weight: 400;
+    font-size: 24px;
+
+    @media (min-width: 768px) {
+      font-size: 35px;
+    }
+
     a {
       color: inherit;
     }
@@ -59,8 +70,21 @@
   .entry-content {
     color: #000000;
     font-family: Lato;
-    font-size: 18px;
     font-weight: 300;
-    line-height: 27px;
+    @media (min-width: 768px) {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  .entry-summary {
+    a {
+      display: block;
+      background-color: #000;
+      color: #fff;
+      width: 150px;
+      margin: 15px auto;
+      line-height: 30px;
+    }
   }
 }

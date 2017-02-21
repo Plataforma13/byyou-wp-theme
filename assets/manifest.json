@@ -19,9 +19,12 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "bootstrap.js": {
+      "bower": ["bootstrap"]
     }
   },
   "config": {
-    "devUrl": "http://wp.local:8080/wordpress"
+    "devUrl": "http://wp.local:8080/blog"
   }
 }

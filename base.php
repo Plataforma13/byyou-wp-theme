@@ -23,7 +23,7 @@ use Roots\Sage\Wrapper;
       <div class="wrap container" role="document">
         <div class="content row">
           <?php if (Setup\display_sidebar()) : ?>
-            <aside class="sidebar col-md-3">
+            <aside class="sidebar col-md-3 hidden-xs">
               <?php include Wrapper\sidebar_path(); ?>
             </aside><!-- /.sidebar -->
           <?php endif; ?>
