@@ -1,12 +1,6 @@
 .post {
   margin-bottom: 80px;
 
-  @media (max-width: 767px) {
-    .home & {
-      text-align: center;
-    }
-  }
-
   .entry-category {
     margin: 0;
     background-color: #dca3c6;
@@ -29,12 +23,22 @@
     font-weight: 400;
     font-size: 24px;
 
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+
     @media (min-width: 768px) {
       font-size: 35px;
     }
 
     a {
       color: inherit;
+    }
+  }
+
+  @media (max-width: 767px) {
+    p {
+      text-align: justify;
     }
   }
 
