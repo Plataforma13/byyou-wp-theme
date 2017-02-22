@@ -10,7 +10,7 @@ if (post_password_required()) {
   <?php endif; // have_comments() ?>
 
   <?php //comment_form(); ?>
-  <form action="http://localhost:8080/blog/wp-comments-post.php" method="post" class="reply">
+  <form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" class="reply">
     <?php echo get_avatar( wp_get_current_user()->user_email, 59 ); ?>
     <input type="text" id="comment" name="comment" maxlength="65525" aria-required="true" required="required"></textarea>
     <?php if ( !is_user_logged_in() ) { ?>
