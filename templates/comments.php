@@ -5,9 +5,7 @@ if (post_password_required()) {
 ?>
 
 <section id="comments" class="post-comments">
-  <?php if (have_comments()) : ?>
-    <h2 class="total-comments">Comentários (<?=get_comments_number()?>)</h2>
-  <?php endif; // have_comments() ?>
+  <h2 class="total-comments">Comentários (<?=get_comments_number()?>)</h2>
 
   <?php //comment_form(); ?>
   <form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" class="reply">
@@ -18,7 +16,7 @@ if (post_password_required()) {
     <?php } else { ?>
     <input type="submit" class="send" value="Enviar">
     <?php } ?>
-    <input type="hidden" name="comment_post_ID" value="<?=get_post_ID()?>" id="comment_post_ID">
+    <input type="hidden" name="comment_post_ID" value="<?=get_the_ID()?>" id="comment_post_ID">
     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
   </form>
 
