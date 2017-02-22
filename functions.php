@@ -72,7 +72,7 @@ function mytheme_comment($comment, $args, $depth) {
           <?php } else { ?>
           <input type="submit" class="send" value="Enviar">
           <?php } ?>
-          <input type="hidden" name="comment_post_ID" value="1" id="<?=$comment->comment_post_ID?>">
+          <input type="hidden" name="comment_post_ID" value="<?=$comment->comment_post_ID?>" id="comment_post_ID">
           <input type="hidden" name="comment_parent" id="comment_parent" value="<?php comment_ID() ?>">
       </form>
     <?php endif; ?>
