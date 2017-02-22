@@ -64,14 +64,17 @@ function mytheme_comment($comment, $args, $depth) {
     </div>
 
     <?php if ( $depth < $args['max_depth'] ) : ?>
-      <div class="reply">
-        <!-- <div class="comment-author"> -->
+      <form action="http://localhost:8080/blog/wp-comments-post.php" method="post" class="reply">
           <?php echo get_avatar( wp_get_current_user()->user_email, 59 ); ?>
-          <input type="text" name="">
-          <button class="send">Enviar</button>
-        <!-- </div> -->
-          <?php //comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-      </div>
+          <input type="text" id="comment" name="comment" maxlength="65525" aria-required="true" required="required"></textarea>
+          <?php if ( !is_user_logged_in() ) { ?>
+          <button class="send fb-login">Enviar</button>
+          <?php } else { ?>
+          <input type="submit" class="send" value="Enviar">
+          <?php } ?>
+          <input type="hidden" name="comment_post_ID" value="1" id="<?=$comment->comment_post_ID?>">
+          <input type="hidden" name="comment_parent" id="comment_parent" value="<?php comment_ID() ?>">
+      </form>
     <?php endif; ?>
 
 
@@ -113,4 +116,8 @@ function my_load_plugin() {
     // die(get_template_directory());
     include_once(get_template_directory().'/plugins/wp-ulike/wp-ulike.php');
   }
+
+  include_once(get_template_directory().'/plugins/zm-ajax-login-register/plugin.php');
+
+
 }

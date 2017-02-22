@@ -9,11 +9,17 @@ if (post_password_required()) {
     <h2 class="total-comments">Comentários (<?=get_comments_number()?>)</h2>
 
     <?php //comment_form(); ?>
-    <div class="reply">
+    <form action="http://localhost:8080/blog/wp-comments-post.php" method="post" class="reply">
       <?php echo get_avatar( wp_get_current_user()->user_email, 59 ); ?>
-      <input type="text" name="">
-      <button class="send">Enviar</button>
-    </div>
+      <input type="text" id="comment" name="comment" maxlength="65525" aria-required="true" required="required"></textarea>
+      <?php if ( !is_user_logged_in() ) { ?>
+      <button class="send fb-login">Enviar</button>
+      <?php } else { ?>
+      <input type="submit" class="send" value="Enviar">
+      <?php } ?>
+      <input type="hidden" name="comment_post_ID" value="1" id="<?=get_post_ID?>">
+      <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+    </form>
 
     <div class="comment list">
       <?php wp_list_comments( 'type=comment&callback=mytheme_comment&style=div&max_depth=2&avatar_size=59' ); ?>
