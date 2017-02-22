@@ -18,7 +18,7 @@ if (post_password_required()) {
     <?php } else { ?>
     <input type="submit" class="send" value="Enviar">
     <?php } ?>
-    <input type="hidden" name="comment_post_ID" value="<?=get_post_ID?>" id="comment_post_ID">
+    <input type="hidden" name="comment_post_ID" value="<?=get_post_ID()?>" id="comment_post_ID">
     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
   </form>
 
